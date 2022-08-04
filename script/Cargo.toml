@@ -1,0 +1,23 @@
+[package]
+name = "rusted-ruins-script"
+version = "0.1.0"
+authors = ["T. Okubo <t.okubo.rx78+devel@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+crossbeam-channel = "0.5"
+log = "0.4"
+nom = "7"
+once_cell = "1"
+regex = "1"
+thiserror = "1"
+
+rusted-ruins-common = { path = "../common", features = ["global_state_obj"] }
+rusted-ruins-rng = { path = "../rng" }
+
+[dependencies.rustpython-vm]
+git = "https://github.com/RustPython/RustPython.git"
+rev = "3d345d7de27e767d3637cac94739e7d47d5f4513"
+default-features = false
+features = ["threading", "compile-parse", "freeze-stdlib"]
